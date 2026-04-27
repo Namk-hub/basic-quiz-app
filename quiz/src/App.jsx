@@ -1,5 +1,5 @@
 import { useState,useEffect } from 'react'
-
+//questions
  const questions = [
   {
     question: "Capital of India?",
@@ -62,13 +62,13 @@ import { useState,useEffect } from 'react'
     answer: "Sahara"
   }
 ];
-
+//main functions
 function App() {
     const [currentQ,setCurrentQ]=useState(0)
     const[score,setScore]=useState(0)
     const[showResult,setShowResult]=useState(false)
     const [time,setTime]=useState(10);
-      
+      //gotonxt functiond make the page go to next question
     const goToNext = () => {
       const next = currentQ + 1;
 
@@ -79,6 +79,7 @@ function App() {
         setShowResult(true);
       }
     };
+    //options and quetions function
     const handleAnswer=(option)=>{
       if (option===questions[currentQ].answer){
         setScore(score+1)
@@ -86,7 +87,7 @@ function App() {
       
       goToNext();
     };
-     
+     //useeffect
     useEffect(() => {
     if (showResult) return;
 
